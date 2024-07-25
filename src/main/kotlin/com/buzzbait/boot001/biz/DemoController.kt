@@ -11,7 +11,7 @@ class DemoController {
 
     @GetMapping("/info")
     fun info() :  ResponseEntity<String>{
-        var infoDesc  = "This is DemoController";
+        var infoDesc  = "This is DemoController...";
         return ResponseEntity.ok(infoDesc);
     }
 }
