@@ -8,5 +8,4 @@ spring:
     show-sql: true
     database: postgresql
     hibernate:
-      ddl-auto: update
-      default_schema: webflux
+      default_schema: kotlin
