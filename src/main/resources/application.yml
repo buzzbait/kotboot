@@ -9,3 +9,4 @@ spring:
     database: postgresql
     hibernate:
       ddl-auto: update
+      default_schema: webflux
