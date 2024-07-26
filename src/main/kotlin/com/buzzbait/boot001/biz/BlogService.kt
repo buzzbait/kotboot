@@ -18,9 +18,8 @@ class BlogService {
     @Transactional
     fun createArticle(addArticleRequest : AddArticleRequest):BuzzResponse{
 
-        var article = Article(title = "test",contents = "test")
-        //blogRepository.save(addArticleRequest.toEntity());
-        blogRepository.save(article);
+        blogRepository.save(addArticleRequest.toEntity());
+
         return BuzzResponse("succ","추가 완료");
     }
 }
