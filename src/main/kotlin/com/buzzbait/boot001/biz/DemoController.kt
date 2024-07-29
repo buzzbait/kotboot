@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/demo")
-class DemoController(private var  blogService: BlogService)
+class DemoController(private val  blogService: BlogService)
 {
     private val logger = KotlinLogging.logger {}
     @GetMapping("/info")
