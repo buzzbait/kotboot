@@ -29,7 +29,7 @@ class DemoControllerTest @Autowired constructor(
     @DisplayName("블로그 추가 테스트...")
     @Test
     fun addArticle(){
-        val addArticleRequest = AddArticleRequest("test001","test002");
+        val addArticleRequest = AddArticleRequest("test","20240730-002");
         val objectMapper = jacksonObjectMapper()
         val requestBody = objectMapper.writeValueAsString(addArticleRequest);
 

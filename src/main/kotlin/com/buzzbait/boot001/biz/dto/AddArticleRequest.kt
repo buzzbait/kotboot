@@ -1,6 +1,6 @@
 package com.buzzbait.boot001.biz.dto
 
-import com.buzzbait.boot001.biz.domain.Article
+import com.buzzbait.boot001.biz.entity.Article
 
 data class AddArticleRequest(
     var title : String,
