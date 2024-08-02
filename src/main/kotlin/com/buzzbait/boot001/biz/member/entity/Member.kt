@@ -1,6 +1,8 @@
 package com.buzzbait.boot001.biz.member.entity
 
 import jakarta.persistence.*
+import lombok.Setter
+
 
 @Entity
 @Table(name = "member", schema = "kotlin")
