@@ -1,4 +1,4 @@
-package com.buzzbait.boot001.biz.entity
+package com.buzzbait.boot001.biz.sample.entity
 
 
 import jakarta.persistence.*

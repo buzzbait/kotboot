@@ -1,4 +1,4 @@
-package com.buzzbait.boot001.biz.dto
+package com.buzzbait.boot001.biz.common.dto
 
 data class BuzzResponse (
     var status :String,

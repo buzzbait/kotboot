@@ -1,10 +1,7 @@
 package com.buzzbait.boot001.biz
 
-import com.buzzbait.boot001.biz.dto.AddArticleRequest
-import com.buzzbait.boot001.biz.repository.BlogRepository
+import com.buzzbait.boot001.biz.sample.dto.AddArticleRequest
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import mu.KotlinLogging
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.springframework.beans.factory.annotation.Autowired
