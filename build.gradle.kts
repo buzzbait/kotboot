@@ -24,6 +24,7 @@ repositories {
 	mavenCentral()
 }
 
+val jdslVersion = "3.5.1"
 dependencies {
 	//implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -32,6 +33,11 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.postgresql:postgresql:42.7.3")
 	implementation("io.github.microutils:kotlin-logging:1.12.5")
+
+	implementation("com.linecorp.kotlin-jdsl:jpql-dsl:${jdslVersion}")
+	implementation("com.linecorp.kotlin-jdsl:jpql-render:${jdslVersion}")
+	implementation("com.linecorp.kotlin-jdsl:spring-data-jpa-support:${jdslVersion}")
+
 
 	compileOnly("org.projectlombok:lombok:1.18.34")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

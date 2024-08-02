@@ -3,6 +3,7 @@ package com.buzzbait.boot001.biz
 import com.buzzbait.boot001.biz.dto.AddArticleRequest
 import com.buzzbait.boot001.biz.repository.BlogRepository
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import mu.KotlinLogging
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
@@ -13,6 +14,7 @@ import org.springframework.http.MediaType
 
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
@@ -39,6 +41,15 @@ class DemoControllerTest @Autowired constructor(
                         .andExpect(status().isOk());
     }
 
+    @DisplayName("회원조회...")
+    @Test
+    fun findMember(){
+
+        var response = mockMvc.perform(get("/demo/inlineMember")
+            .contentType(MediaType.APPLICATION_JSON));
+
+
+    }
     @BeforeEach
     fun mockSetup()  {
        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();

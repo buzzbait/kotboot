@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/demo")
-class DemoController(private val  blogService: BlogService)
+class DemoController(
+    private val  blogService: BlogService,
+    private val memberService: MemberService
+)
 {
     private val logger = KotlinLogging.logger {}
     @GetMapping("/info")
@@ -25,5 +28,14 @@ class DemoController(private val  blogService: BlogService)
         logger.info("new article call...");
         var buzzResponse = blogService.createArticle(addArticleRequest);
         return ResponseEntity.ok(buzzResponse);
+    }
+
+    @GetMapping("/inlineMember")
+    fun inlineMember() :  ResponseEntity<Any?>{
+
+        logger.info("inlineMember...");
+        val memberList = memberService.getConfirmMember(1);
+        logger.info { memberList.toString()}
+        return ResponseEntity.ok(memberList);
     }
 }
