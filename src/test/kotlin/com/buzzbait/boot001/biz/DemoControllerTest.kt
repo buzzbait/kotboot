@@ -38,15 +38,7 @@ class DemoControllerTest @Autowired constructor(
                         .andExpect(status().isOk());
     }
 
-    @DisplayName("회원조회...")
-    @Test
-    fun findMember(){
 
-        var response = mockMvc.perform(get("/demo/inlineMember")
-            .contentType(MediaType.APPLICATION_JSON));
-
-
-    }
     @BeforeEach
     fun mockSetup()  {
        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();

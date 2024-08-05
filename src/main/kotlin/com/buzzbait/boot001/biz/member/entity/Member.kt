@@ -16,8 +16,9 @@ class Member (
     @Column(name = "companyname", nullable = true)
     var companyname : String,
 
-    @Column(name = "grade", nullable = true)
-    var grade : String
+    @ManyToOne
+    @JoinColumn(name = "gradeid", nullable = true)
+    var grade : MemberGrade
 ){
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
