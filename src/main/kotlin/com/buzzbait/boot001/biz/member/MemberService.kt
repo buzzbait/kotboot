@@ -2,6 +2,7 @@ package com.buzzbait.boot001.biz.member
 
 import com.buzzbait.boot001.biz.common.dto.BuzzResponse
 import com.buzzbait.boot001.biz.member.dto.AddMemberRequest
+import com.buzzbait.boot001.biz.member.dto.InlineMemberResponse
 import com.buzzbait.boot001.biz.member.dto.UpdateMemberRequest
 import com.buzzbait.boot001.biz.member.entity.ConfirmMember
 import com.buzzbait.boot001.biz.member.entity.Member
@@ -25,11 +26,29 @@ class MemberService (
 
         return findMember;
     }
-
-    fun getConfirmMember(
+    /*
+    fun getInlineMember(
          myId : Long
-    ): List<Member> {
+    ): List<InlineMemberResponse> {
         val findMemberList = memberRepository.confirmMembers(myId)
+
+        val memberList : List<InlineMemberResponse> = findMemberList.map {
+            m -> InlineMemberResponse(
+            m.id,
+            m.email,
+            m.name,
+            m.companyname,
+            m.grade.id,
+            m.grade.grade )
+        }
+
+        return memberList;
+    }
+    */
+    fun getInlineMember(
+        myId : Long
+    ): List<Member> {
+        val findMemberList = memberRepository.getInlineMember(myId)
         return findMemberList;
     }
 

@@ -13,6 +13,7 @@ import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.web.context.WebApplicationContext
@@ -35,7 +36,7 @@ class MemberControllerTest @Autowired constructor(
     @DisplayName("멤버 추가 테스트...")
     @Test
     fun addArticle(){
-        val addMemberRequest = AddMemberRequest(0,"test@email.com","일론머스크","테술라",1);
+        val addMemberRequest = AddMemberRequest(0,"tesla01@email.com","일론머스크","테술라",1);
         val objectMapper = jacksonObjectMapper()
         val requestBody = objectMapper.writeValueAsString(addMemberRequest);
 
@@ -56,5 +57,18 @@ class MemberControllerTest @Autowired constructor(
             .andExpect(status().isOk());
 
         logger.info ( "res:{}",response.toString());
+    }
+
+    @DisplayName("추천 회원조회...")
+    @Test
+    fun findInlineMember(){
+
+        var response = mockMvc.perform(
+            get("/member/inlineMember/1")
+            .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isOk())
+            .andDo {
+                MockMvcResultHandlers.print()
+            }
     }
 }

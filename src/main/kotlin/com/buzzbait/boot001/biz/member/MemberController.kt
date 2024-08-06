@@ -14,12 +14,12 @@ class MemberController (
 ){
     private val logger = KotlinLogging.logger {}
 
-    @GetMapping("/inlineMember")
-    fun inlineMember() : ResponseEntity<Any?> {
+    @GetMapping("/inlineMember/{id}")
+    fun inlineMember(@PathVariable("id") id:Long) : ResponseEntity<Any?> {
 
         logger.info("inlineMember...");
-        val memberList = memberService.getConfirmMember(11);
-        logger.info { memberList.toString()}
+        val memberList = memberService.getInlineMember(id);
+
         return ResponseEntity.ok(memberList);
     }
 
