@@ -63,12 +63,12 @@ class MemberControllerTest @Autowired constructor(
     @Test
     fun findInlineMember(){
 
-        var response = mockMvc.perform(
+        var mockResult = mockMvc.perform(
             get("/member/inlineMember/1")
-            .contentType(MediaType.APPLICATION_JSON))
+            .contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(status().isOk())
-            .andDo {
-                MockMvcResultHandlers.print()
-            }
+            .andReturn();
+        mockResult.response.contentType  = "application/json;charset=UTF-8"
+        logger.info ( "response :{}",  mockResult.response.contentAsString);
     }
 }
