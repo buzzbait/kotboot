@@ -1,6 +1,6 @@
 package com.buzzbait.boot001.biz.member.dto
 
-import com.buzzbait.boot001.biz.member.entity.Member
+import com.buzzbait.boot001.biz.member.entity.MemberEntity
 
 data class InlineMemberDto(
     var id : Long,
@@ -11,7 +11,7 @@ data class InlineMemberDto(
     var gradeName : String
 ){
     companion object {
-        fun fromEntity(memberEntity: Member): InlineMemberDto {
+        fun fromEntity(memberEntity: MemberEntity): InlineMemberDto {
 
             return InlineMemberDto(id = memberEntity.id,
                 email = memberEntity.email,

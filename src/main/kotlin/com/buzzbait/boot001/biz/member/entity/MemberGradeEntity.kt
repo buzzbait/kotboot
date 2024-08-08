@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 
 @Entity
 @Table(name = "membergrade", schema = "kotlin")
-class MemberGrade(
+class MemberGradeEntity(
     @Column(name = "grade", nullable = false)
     var grade : String,
 

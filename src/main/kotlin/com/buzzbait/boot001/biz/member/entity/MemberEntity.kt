@@ -1,12 +1,11 @@
 package com.buzzbait.boot001.biz.member.entity
 
 import jakarta.persistence.*
-import lombok.Setter
 
 
 @Entity
 @Table(name = "member", schema = "kotlin")
-class Member (
+class MemberEntity (
     @Column(name = "email", nullable = true)
     var email : String,
 
@@ -27,7 +26,7 @@ class Member (
     */
     @ManyToOne(optional = false,fetch = FetchType.LAZY)
     @JoinColumn(name = "gradeid",nullable = false)
-    var grade : MemberGrade
+    var grade : MemberGradeEntity
 ){
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

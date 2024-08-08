@@ -4,7 +4,7 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "confirmmember", schema = "kotlin")
-class ConfirmMember(
+class ConfirmMemberEntity(
     @Column(name = "myid", nullable = false)
     var myId : Long,
 

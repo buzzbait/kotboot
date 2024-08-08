@@ -21,7 +21,7 @@ import kotlin.test.Test
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class MemberControllerTest @Autowired constructor(
+class MemberEntityControllerTest @Autowired constructor(
     private var mockMvc : MockMvc,
     private val context : WebApplicationContext
 ){
