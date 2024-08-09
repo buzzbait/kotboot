@@ -5,7 +5,8 @@ import com.buzzbait.boot001.biz.member.entity.ConfirmMemberEntity
 import com.buzzbait.boot001.biz.member.entity.MemberEntity
 import com.linecorp.kotlinjdsl.support.spring.data.jpa.repository.KotlinJdslJpqlExecutor
 /*
-    JDSL 구현하는 소스는 모두 XXXXRepositoryImpl 에서 구현
+    사용자 정의 Repository 구현
+    kotlinJdslJpqlExecutor 를 주입받아서 findAll 을 구현 한다.
 * */
 class CustomMemberRepositoryImpl(
     private val kotlinJdslJpqlExecutor: KotlinJdslJpqlExecutor,
