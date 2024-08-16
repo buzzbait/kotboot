@@ -1,7 +1,9 @@
 package com.buzzbait.boot001.biz.board.repository
 
 import com.buzzbait.boot001.biz.board.entity.BoardEntity
-import com.github.f4b6a3.ulid.UlidCreator
+import com.buzzbait.boot001.config.MainDataSourceJpaConfig
+import com.buzzbait.boot001.config.MainDataSourceMybatisConfig
+import com.buzzbait.boot001.mybatis.biz.BoardMapper
 import com.linecorp.kotlinjdsl.support.spring.data.jpa.autoconfigure.KotlinJdslAutoConfiguration
 import mu.KotlinLogging
 import org.assertj.core.api.Assertions.assertThat
@@ -17,9 +19,12 @@ import kotlin.test.Test
 @DataJpaTest
 @Import(
     KotlinJdslAutoConfiguration::class,
+    MainDataSourceJpaConfig::class,
+    MainDataSourceMybatisConfig::class
 )
 class BoardRepositoryTest @Autowired constructor(
-    private  val boardRepository: BoardRepository
+    private  val boardRepository: BoardRepository,
+    private  val boardMapper: BoardMapper
 ){
     private val logger = KotlinLogging.logger {}
 
@@ -43,5 +48,12 @@ class BoardRepositoryTest @Autowired constructor(
         val returnEntity = boardRepository.findByUuid(uuid)
         //THEN
         assertThat("질답게시판").isEqualTo(returnEntity?.name);
+    }
+
+    @DisplayName("myBatis 게시판 수 검색 ...")
+    @Test
+    fun findBoardCount(){
+        val rowCount = boardMapper.selectBoardCnt();
+        assertThat(2).isEqualTo(rowCount);
     }
 }

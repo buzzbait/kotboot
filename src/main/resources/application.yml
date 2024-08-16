@@ -1,6 +1,12 @@
-spring:
+main-db:
   datasource:
     url: jdbc:postgresql://localhost:5432/buzzdb
+    username: buzz
+    password: buzz
+    driver-class-name: org.postgresql.Driver
+subdomain-db:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kotlindb
     username: buzz
     password: buzz
     driver-class-name: org.postgresql.Driver

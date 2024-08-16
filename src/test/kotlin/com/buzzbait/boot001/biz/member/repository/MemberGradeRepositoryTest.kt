@@ -1,6 +1,7 @@
 package com.buzzbait.boot001.biz.member.repository
 
 import com.buzzbait.boot001.biz.member.entity.MemberGradeEntity
+import com.buzzbait.boot001.config.MainDataSourceJpaConfig
 import com.linecorp.kotlinjdsl.support.spring.data.jpa.autoconfigure.KotlinJdslAutoConfiguration
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName
@@ -17,11 +18,14 @@ import kotlin.test.Test
     Kotlin JDSL 테스트를 위해 KotlinJdslAutoConfiguration Import
 
     @DataJpaTest 는 순수하게 JPA 에 관련된 Bean 들만 로딩함
+
+    멀티 DataSource 설정이 포함된 경우는 해당 Configuration 클래스(MainDataSourceConfig)도 Import 해야 한다.
  */
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @DataJpaTest
 @Import(
     KotlinJdslAutoConfiguration::class,
+    MainDataSourceJpaConfig::class
 )
 class MemberGradeRepositoryTest @Autowired constructor(
     private val memberGradeRepository: MemberGradeRepository

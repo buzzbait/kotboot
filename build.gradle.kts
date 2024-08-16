@@ -38,6 +38,10 @@ dependencies {
 	implementation("com.linecorp.kotlin-jdsl:jpql-dsl:${jdslVersion}")
 	implementation("com.linecorp.kotlin-jdsl:jpql-render:${jdslVersion}")
 	implementation("com.linecorp.kotlin-jdsl:spring-data-jpa-support:${jdslVersion}")
+
+	//Springboot myBaits
+	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3")
+
 	//순서보장 UUID 생성 라이브러리
 	implementation("com.github.f4b6a3:ulid-creator:5.2.3")
 
