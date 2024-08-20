@@ -1,6 +1,7 @@
 package com.buzzbait.boot001.biz.member.repository
 
-import com.buzzbait.boot001.biz.member.entity.MemberGradeEntity
+import com.buzzbait.boot001.legacy.biz.member.entity.MemberGradeEntity
+import com.buzzbait.boot001.legacy.biz.member.repository.MemberGradeRepository
 import com.linecorp.kotlinjdsl.support.spring.data.jpa.autoconfigure.KotlinJdslAutoConfiguration
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.extensions.spring.SpringTestExtension

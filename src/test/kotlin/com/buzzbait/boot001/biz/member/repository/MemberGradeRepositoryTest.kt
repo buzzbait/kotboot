@@ -1,7 +1,8 @@
 package com.buzzbait.boot001.biz.member.repository
 
-import com.buzzbait.boot001.biz.member.entity.MemberGradeEntity
+import com.buzzbait.boot001.legacy.biz.member.entity.MemberGradeEntity
 import com.buzzbait.boot001.config.MainDataSourceJpaConfig
+import com.buzzbait.boot001.legacy.biz.member.repository.MemberGradeRepository
 import com.linecorp.kotlinjdsl.support.spring.data.jpa.autoconfigure.KotlinJdslAutoConfiguration
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.DisplayName

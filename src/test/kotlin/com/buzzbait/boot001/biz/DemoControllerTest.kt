@@ -1,6 +1,6 @@
 package com.buzzbait.boot001.biz
 
-import com.buzzbait.boot001.biz.sample.dto.AddArticleRequest
+import com.buzzbait.boot001.legacy.biz.sample.dto.AddArticleRequest
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName

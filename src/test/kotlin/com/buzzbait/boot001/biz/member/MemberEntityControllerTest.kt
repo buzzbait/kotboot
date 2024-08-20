@@ -1,7 +1,7 @@
 package com.buzzbait.boot001.biz.member
 
-import com.buzzbait.boot001.biz.member.dto.AddMemberRequest
-import com.buzzbait.boot001.biz.sample.dto.AddArticleRequest
+import com.buzzbait.boot001.legacy.biz.member.dto.AddMemberRequest
+import com.buzzbait.boot001.legacy.biz.sample.dto.AddArticleRequest
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import mu.KotlinLogging
 import org.junit.jupiter.api.BeforeEach

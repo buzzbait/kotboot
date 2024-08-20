@@ -1,9 +1,10 @@
 package com.buzzbait.boot001.biz.board.repository
 
-import com.buzzbait.boot001.biz.board.entity.BoardEntity
+import com.buzzbait.boot001.legacy.biz.board.entity.BoardEntity
 import com.buzzbait.boot001.config.MainDataSourceJpaConfig
 import com.buzzbait.boot001.config.MainDataSourceMybatisConfig
-import com.buzzbait.boot001.mybatis.biz.BoardMapper
+import com.buzzbait.boot001.legacy.biz.board.repository.BoardRepository
+import com.buzzbait.boot001.legacy.mybatis.biz.BoardMapper
 import com.linecorp.kotlinjdsl.support.spring.data.jpa.autoconfigure.KotlinJdslAutoConfiguration
 import mu.KotlinLogging
 import org.assertj.core.api.Assertions.assertThat

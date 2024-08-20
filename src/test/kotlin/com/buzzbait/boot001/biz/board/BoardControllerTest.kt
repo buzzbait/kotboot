@@ -1,7 +1,7 @@
 package com.buzzbait.boot001.biz.board
 
-import com.buzzbait.boot001.biz.board.dto.NewBoardDto
-import com.buzzbait.boot001.biz.board.dto.UpdateBoardDto
+import com.buzzbait.boot001.legacy.biz.board.dto.NewBoardDto
+import com.buzzbait.boot001.legacy.biz.board.dto.UpdateBoardDto
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import mu.KotlinLogging
 import org.junit.jupiter.api.BeforeEach
