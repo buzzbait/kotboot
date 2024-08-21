@@ -12,7 +12,7 @@ import javax.sql.DataSource
 
 
 @Configuration
-@MapperScan(    basePackages = ["com.buzzbait.boot001.mybatis.biz"],
+@MapperScan(    basePackages = ["com.buzzbait.boot001.infrastructure.dbms.master.mybatis.mapper"],
                 sqlSessionFactoryRef = "sqlSessionFactory",
                 sqlSessionTemplateRef = "sqlSessionTemplate")
 class MainDataSourceMybatisConfig {
@@ -26,7 +26,7 @@ class MainDataSourceMybatisConfig {
         // mybatis 설정 파일 세팅
         sqlSessionFactoryBean.setConfigLocation(PathMatchingResourcePatternResolver().getResource("classpath:mybatis/config/mybatis-config.xml"))
         // mapper.xml 위치 패키지 주소
-        sqlSessionFactoryBean.setMapperLocations(*PathMatchingResourcePatternResolver().getResources("classpath:mybatis/mapper/biz/**/*.xml"))
+        sqlSessionFactoryBean.setMapperLocations(*PathMatchingResourcePatternResolver().getResources("classpath:mybatis/mapper/master/**/*.xml"))
 
         return sqlSessionFactoryBean.getObject()
     }

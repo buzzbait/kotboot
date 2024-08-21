@@ -1,16 +1,13 @@
 package com.buzzbait.boot001.legacy.biz.common.entity
 
-import com.github.f4b6a3.ulid.UlidCreator
+
 import jakarta.persistence.*
 import org.hibernate.proxy.HibernateProxy
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
-import org.springframework.data.domain.Persistable
 import org.springframework.data.jpa.domain.support.AuditingEntityListener
-import java.io.Serializable
 import java.time.LocalDateTime
 import java.util.*
-import kotlin.jvm.Transient
 
 /*
     테이블의 PK 값을 UUID 로 생성하는 경우
@@ -63,7 +60,7 @@ abstract class BaseEntity{
         return if (obj is HibernateProxy) {
             obj.hibernateLazyInitializer.identifier
         } else {
-            (obj as com.buzzbait.boot001.legacy.biz.common.entity.BaseEntity).id
+            (obj as BaseEntity).id
         }
     }
     override fun hashCode() = Objects.hashCode(id)

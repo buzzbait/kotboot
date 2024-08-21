@@ -4,6 +4,7 @@ import com.buzzbait.boot001.board.adapter.`in`.dto.CleanCreateBoardRequest
 import com.buzzbait.boot001.board.adapter.`in`.dto.CleanUpdateBoardRequest
 import com.buzzbait.boot001.board.application.port.out.BoardRepositoryPort
 import com.buzzbait.boot001.common.annotation.PersistenceAdapter
+import com.buzzbait.boot001.infrastructure.dbms.master.jpa.repository.CleanBoardRepository
 import java.util.*
 
 /*

@@ -1,4 +1,4 @@
-package com.buzzbait.boot001.common.entity
+package com.buzzbait.boot001.infrastructure.dbms.master.jpa.entity.common
 
 import jakarta.persistence.*
 import org.hibernate.proxy.HibernateProxy
@@ -25,7 +25,7 @@ import java.util.*
 */
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener::class)
-class CleanBaseEntity {
+abstract class CleanBaseEntity {
     //공통 ID DB 자동증가 필드
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,11 +36,13 @@ class CleanBaseEntity {
     @LastModifiedDate
     @Column(name = "UPDATE_DT")
     var updateDt: LocalDateTime = LocalDateTime.now()
+        protected set
 
     //공통 생성일 필드
     @CreatedDate
     @Column(name = "CREATE_DT", updatable = false)
-    val createDt: LocalDateTime = LocalDateTime.now()
+    var createDt: LocalDateTime = LocalDateTime.now()
+        protected set
 
     override fun equals(other: Any?): Boolean {
         if (other == null) {
@@ -58,7 +60,7 @@ class CleanBaseEntity {
         return if (obj is HibernateProxy) {
             obj.hibernateLazyInitializer.identifier
         } else {
-            (obj as com.buzzbait.boot001.legacy.biz.common.entity.BaseEntity).id
+            (obj as CleanBaseEntity).id
         }
     }
     override fun hashCode() = Objects.hashCode(id)

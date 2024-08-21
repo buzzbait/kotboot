@@ -15,7 +15,7 @@ class BoardEntity(
    @Column(name = "NAME", nullable = true)
    var name : String,
 
-) : com.buzzbait.boot001.legacy.biz.common.entity.BaseEntity(){
+) : BaseEntity(){
 
     @Column(name = "UU_ID", nullable = false,updatable= false,columnDefinition = "uuid")
     val uuid: UUID = UlidCreator.getMonotonicUlid().toUuid()

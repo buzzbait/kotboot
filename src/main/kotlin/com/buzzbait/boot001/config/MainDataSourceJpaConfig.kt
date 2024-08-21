@@ -24,7 +24,7 @@ import javax.sql.DataSource
 @EnableJpaRepositories(
     entityManagerFactoryRef = "mainEntityManagerFactory",
     transactionManagerRef = "mainTransactionManager",
-    basePackages = ["com.buzzbait.boot001.biz"]
+    basePackages = ["com.buzzbait.boot001.infrastructure.dbms.master.jpa.repository"]
 )
 class MainDataSourceJpaConfig() {
 
@@ -56,7 +56,7 @@ class MainDataSourceJpaConfig() {
     ): LocalContainerEntityManagerFactoryBean {
         return builder
             .dataSource(mainDataSource())
-            .packages("com.buzzbait.boot001.biz")
+            .packages("com.buzzbait.boot001.infrastructure.dbms.master.jpa.entity")
             .persistenceUnit("main")
             .build()
     }

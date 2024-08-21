@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/cleanboard")
+@RequestMapping("/clean-board")
 class CleanBoardController(
     private val createBoardUseCase: CreateBoardUseCase,
     private val updateBoardUseCase: UpdateBoardUseCase
