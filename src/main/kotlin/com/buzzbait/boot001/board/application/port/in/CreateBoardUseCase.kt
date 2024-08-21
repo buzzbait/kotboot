@@ -1,7 +1,7 @@
 package com.buzzbait.boot001.board.application.port.`in`
 
-import com.buzzbait.boot001.board.adapter.`in`.dto.CleanCreateBoardRequest
+import com.buzzbait.boot001.board.adapter.`in`.dto.CreateBoardRequest
 
 interface CreateBoardUseCase {
-    fun createBoard(cleanCreateBoardRequest: CleanCreateBoardRequest) : Pair<Boolean,String>
+    fun createBoard(createBoardRequest: CreateBoardRequest) : Pair<Boolean,String>
 }
