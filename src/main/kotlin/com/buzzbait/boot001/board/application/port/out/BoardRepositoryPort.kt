@@ -7,7 +7,9 @@ import com.buzzbait.boot001.board.adapter.out.dto.GetBoardByUuidDto
 
 /*
     외부 DB 저장소를 사용하는 Board(게시판) Port 인터페이스
-    함수파라미터 와 리턴타입에 Jpa Entity 를 직접 사용하지 않는다
+
+    특정 프레임워크에 종속되는 형태의 Object (ex) JpaRepository,Entity 등)를 파라미터 또는 리턴 형태로 사용하지 않는다
+    파라미터와 리턴타입은 POJO 사용
  */
 interface BoardRepositoryPort {
     fun createBoard( createBoardRequest: CreateBoardRequest):Pair<Boolean,String>

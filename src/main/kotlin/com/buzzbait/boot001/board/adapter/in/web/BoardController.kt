@@ -32,7 +32,7 @@ class BoardController(
         return ResponseEntity.ok(returnResponse)
     }
     @GetMapping("/{uuId}")
-    fun getMember(@PathVariable("uuId") uuId:String) : ResponseEntity<CommonResponse> {
+    fun getBoardByUuid(@PathVariable("uuId") uuId:String) : ResponseEntity<CommonResponse> {
         val getBoardByUuidDto = getBoardUseCase.getBoard(uuId)
         val returnResponse =  CommonResponse(ResponseStatus.API_OK.value,"",getBoardByUuidDto)
         return ResponseEntity.ok(returnResponse);
